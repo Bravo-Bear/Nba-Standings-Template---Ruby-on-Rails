@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>City</th>
+      <th>Team</th>
+      <th>Conference</th>
+      <th>Wins</th>
+      <th>Losses</th>
+      <th>Win %</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% teams.each do |team| %>
+      <tr>
+      <td><%= team.city %></td>
+      <td><%= team.nickname %></td>
+      <td><%= team.conference %></td>
+      <td><%= team.wins %></td>
+      <td><%= team.losses%></td>
+      <td><%= number_to_percentage(team.win_percentage, precision: 0) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
